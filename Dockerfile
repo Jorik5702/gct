@@ -18,5 +18,7 @@ RUN apk add --no-cache ca-certificates
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /app/helloworld /helloworld
 
+EXPOSE $PORT
+
 # Run the web service on container startup.
 CMD ["/helloworld"]
